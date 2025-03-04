@@ -14,7 +14,7 @@ export const Route = createFileRoute('/posts/$postId')({
   head: ({ loaderData }) => console.log('this is not called when this is a not found route but it was previously', loaderData) || ({
     meta: [
       ...seo({
-        title: loaderData.title,
+        title: loaderData?.title ?? 'Post not found',
       }),
     ],
   })
